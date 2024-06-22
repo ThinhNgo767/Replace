@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-button,
+.container-button-replace {
+  margin-top: 1rem;
+}
+.container-button button {
+  margin: 0.5rem;
+}
+
+.container-button-replace button,
+.container-button button {
+  min-width: 5rem;
+  min-height: 2rem;
+}
+.container-input {
+  margin-top: 1.5rem;
+}
+textarea.input-text,
+textarea.output-text {
+  width: 20rem;
+  height: 10rem;
+  resize: none;
+  padding: 0.25rem 0 0 0.5rem;
+  font-size: 0.9rem;
+}
+textarea:focus {
+  outline: 1px solid red;
+  border: 1px solid red;
+}
+.input-text {
+  margin-left: 1rem;
+}
+.output-text {
+  margin-left: 2rem;
+}
+@media only screen and (max-width: 480px) {
+  .container-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .input-text,
+  .output-text {
+    margin-left: 0;
+  }
+}
