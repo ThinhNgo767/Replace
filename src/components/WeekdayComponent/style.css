@@ -25,11 +25,31 @@ label:hover {
 .active {
   color: blue;
 }
+.agency-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.ol-checked li {
+  width: 3.5rem;
+}
+.container-agency {
+  margin-top: 1rem;
+}
+ol.ol-checked {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
 @media only screen and (max-width: 480px) {
   .container-weekday {
     margin-top: 2rem;
+    padding: 0 0.25rem;
   }
   .day-item {
-    padding: 0.25rem 0;
+    padding: 0.25rem 0.25rem;
   }
 }

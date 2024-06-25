@@ -6,6 +6,7 @@
 .container-button,
 .container-button-replace {
   margin-top: 1rem;
+  padding-top: 0.5rem;
 }
 .container-button button {
   margin: 0.5rem;
@@ -24,7 +25,7 @@ textarea.output-text {
   width: 20rem;
   height: 10rem;
   resize: none;
-  padding: 0.25rem 0 0 0.5rem;
+  padding: 0.5rem 0 0 0.5rem;
   font-size: 0.9rem;
 }
 textarea:focus {

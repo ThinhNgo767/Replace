@@ -3,10 +3,11 @@ import Weekday from "../WeekdayComponent";
 
 import { useState, useRef } from "react";
 
-const InputComponent = ({ day, setDay }) => {
+const InputComponent = ({ setDay }) => {
   const [textInput, setTextInput] = useState("");
   const [textOnput, setTextOnput] = useState("");
   const [focusText, setFocusText] = useState(null);
+  const [agency, setAgency] = useState("");
 
   const textareaInputRef = useRef(null);
   const textareaOnputRef = useRef(null);
@@ -42,7 +43,7 @@ const InputComponent = ({ day, setDay }) => {
       .replace(/nga/g, "n")
       .replace(/ng/g, "n")
       .replace(/;/g, " ")
-      .replace(/2d/g, day);
+      .replace(/2d/g, agency);
     setTextOnput(data);
   };
 
@@ -79,7 +80,7 @@ const InputComponent = ({ day, setDay }) => {
           ref={textareaOnputRef}
         />
       </div>
-      <Weekday day={day} setDay={setDay} />
+      <Weekday setDay={setDay} setAgency={setAgency} />
       <div className="container-button-replace">
         <button
           className="replace-data"

@@ -1,0 +1,19 @@
+.footer {
+  width: 100vw;
+  /* background-image: url("../../img/white-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: darkgrey;
+  height: 3rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #000;
+}
+.copy-right {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+}
