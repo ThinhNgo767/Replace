@@ -32,10 +32,12 @@ label:hover {
   gap: 1rem;
 }
 .ol-checked li {
-  width: 3.5rem;
+  width: 11rem;
+  text-align: justify;
 }
 .container-agency {
   margin-top: 1rem;
+  min-height: 5rem;
 }
 ol.ol-checked {
   list-style: none;
@@ -43,6 +45,7 @@ ol.ol-checked {
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
+  min-width: 100%;
 }
 @media only screen and (max-width: 480px) {
   .container-weekday {
