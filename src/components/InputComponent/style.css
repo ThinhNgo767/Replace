@@ -38,6 +38,11 @@ textarea:focus {
 .output-text {
   margin-left: 2rem;
 }
+button.replace-data {
+  min-width: 6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 @media only screen and (max-width: 480px) {
   .container-input {
     display: flex;
@@ -49,5 +54,9 @@ textarea:focus {
   .input-text,
   .output-text {
     margin-left: 0;
+  }
+  button.replace-data {
+    min-width: 12rem;
+    min-height: 2.5rem;
   }
 }

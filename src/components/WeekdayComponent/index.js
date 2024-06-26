@@ -66,10 +66,11 @@ const Weekday = ({ setDay, setAgency }) => {
               type="radio"
               onChange={handleChecked}
               value={agency_0}
+              id={agency_0}
               name="agency"
               checked={checked === agency_0}
             />
-            <li>{fullname_0}</li>
+            <label htmlFor={agency_0}>{fullname_0}</label>
           </ol>
         )}
         {agencys && (
@@ -78,10 +79,11 @@ const Weekday = ({ setDay, setAgency }) => {
               type="radio"
               onChange={handleChecked}
               value={agency_1}
+              id={agency_1}
               name="agency"
               checked={checked === agency_1}
             />{" "}
-            <li>{fullname_1}</li>
+            <label htmlFor={agency_1}>{fullname_1}</label>
           </ol>
         )}
         {agencys && (
@@ -90,10 +92,11 @@ const Weekday = ({ setDay, setAgency }) => {
               type="radio"
               onChange={handleChecked}
               value={agency_2}
+              id={agency_2}
               name="agency"
               checked={checked === agency_2}
             />{" "}
-            <li>{fullname_2}</li>
+            <label htmlFor={agency_2}>{fullname_2}</label>
           </ol>
         )}
       </div>

@@ -11,7 +11,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <InputComponent day={day} setDay={setDay} />
+      <div className="container-box">
+        <InputComponent day={day} setDay={setDay} />
+      </div>
+
       <Footer />
     </div>
   );
