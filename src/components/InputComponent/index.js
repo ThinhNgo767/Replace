@@ -39,13 +39,20 @@ const InputComponent = ({ setDay }) => {
 
   const handleReplace = () => {
     const data = textInput
-      .replace(/\bngàn\b|\bngan\b|\bnga\b|\bng\b/g, "n")
-      .replace(/đđ|đd|dđ|₫₫/g, "dd")
+      .replace(/(\d)(ngan|nga|ng)\b/g, "$1n")
+      .replace(/(\d)(đđ|đd|dđ|₫₫)\b/g, "$1dd")
       .replace(/\b₫\b|đá|\bda\b/g, "dat")
-      .replace(/(d)(\d+)/g, "dat$2n")
+      .replace(
+        /\bbao(\d+)n\b|\bba(\d+)n\b|\bb(\d+)n\b/g,
+        (match, p1, p2, p3) => {
+          return `bl${p1 || p2 || p3}n`;
+        }
+      )
+      .replace(/bao|b\s/g, "bl")
       .replace(/\.+|,+|;+|\+|-/g, " ")
-      .replace(/(b|bl|dd|dau|duoi|dat)(\d+)/g, "$1$2")
+      .replace(/(bl|dd|dau|duoi|dat)(\d+)/g, "$1$2")
       .replace(/2d/g, agency);
+
     setTextOnput(data);
   };
 
