@@ -11,6 +11,7 @@ const Weekday = ({ setDay, setAgency }) => {
   const [fullname_0, setFullname_0] = useState("");
   const [fullname_1, setFullname_1] = useState("");
   const [fullname_2, setFullname_2] = useState("");
+  const [showAgency, setShowAgency] = useState(false);
 
   const today = new Date();
   const dateOfWeek = today.getDay();
@@ -38,68 +39,80 @@ const Weekday = ({ setDay, setAgency }) => {
 
   return (
     <>
-      <div className="container-weekday">
-        {dataDays.map((day) => (
-          <div key={day.id}>
-            <div className="day-item" onClick={() => handleAgency(day.id)}>
-              <input
-                type="radio"
-                id={day.id}
-                name="day"
-                value={day.day}
-                onChange={handleRadioChange}
-              />
-              <label
-                htmlFor={day.id}
-                className={dateOfWeek === +day.id ? "active" : ""}
-              >
-                {day.day}
-              </label>
-            </div>
+      <div className="show-replace-2d">
+        <input
+          type="checkbox"
+          checked={showAgency}
+          onChange={(e) => setShowAgency(e.target.checked)}
+        />
+        <p>Show Replace 2D</p>
+      </div>
+      {showAgency && (
+        <section className="container-content-agency">
+          <div className="container-weekday">
+            {dataDays.map((day) => (
+              <div key={day.id}>
+                <div className="day-item" onClick={() => handleAgency(day.id)}>
+                  <input
+                    type="radio"
+                    id={day.id}
+                    name="day"
+                    value={day.day}
+                    onChange={handleRadioChange}
+                  />
+                  <label
+                    htmlFor={day.id}
+                    className={dateOfWeek === +day.id ? "active" : ""}
+                  >
+                    {day.day}
+                  </label>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="container-agency">
-        {agencys && (
-          <ol className="ol-checked">
-            <input
-              type="radio"
-              onChange={handleChecked}
-              value={agency_0}
-              id={agency_0}
-              name="agency"
-              checked={checked === agency_0}
-            />
-            <label htmlFor={agency_0}>{fullname_0}</label>
-          </ol>
-        )}
-        {agencys && (
-          <ol className="ol-checked">
-            <input
-              type="radio"
-              onChange={handleChecked}
-              value={agency_1}
-              id={agency_1}
-              name="agency"
-              checked={checked === agency_1}
-            />{" "}
-            <label htmlFor={agency_1}>{fullname_1}</label>
-          </ol>
-        )}
-        {agencys && (
-          <ol className="ol-checked">
-            <input
-              type="radio"
-              onChange={handleChecked}
-              value={agency_2}
-              id={agency_2}
-              name="agency"
-              checked={checked === agency_2}
-            />{" "}
-            <label htmlFor={agency_2}>{fullname_2}</label>
-          </ol>
-        )}
-      </div>
+          <div className="container-agency">
+            {agencys && (
+              <ol className="ol-checked">
+                <input
+                  type="radio"
+                  onChange={handleChecked}
+                  value={agency_0}
+                  id={agency_0}
+                  name="agency"
+                  checked={checked === agency_0}
+                />
+                <label htmlFor={agency_0}>{fullname_0}</label>
+              </ol>
+            )}
+            {agencys && (
+              <ol className="ol-checked">
+                <input
+                  type="radio"
+                  onChange={handleChecked}
+                  value={agency_1}
+                  id={agency_1}
+                  name="agency"
+                  checked={checked === agency_1}
+                />{" "}
+                <label htmlFor={agency_1}>{fullname_1}</label>
+              </ol>
+            )}
+            {agencys && (
+              <ol className="ol-checked">
+                <input
+                  type="radio"
+                  onChange={handleChecked}
+                  value={agency_2}
+                  id={agency_2}
+                  name="agency"
+                  checked={checked === agency_2}
+                />{" "}
+                <label htmlFor={agency_2}>{fullname_2}</label>
+              </ol>
+            )}
+          </div>
+        </section>
+      )}
     </>
   );
 };
