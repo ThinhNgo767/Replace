@@ -9,6 +9,7 @@ import { useState } from "react";
 function App() {
   const [day, setDay] = useState("");
   const [checkKey, setCheckKey] = useState(false);
+  const [modal, setModal] = useState(false);
 
   return (
     <div className="App">
@@ -18,7 +19,11 @@ function App() {
         {checkKey ? (
           <InputComponent day={day} setDay={setDay} />
         ) : (
-          <Welcome setCheckKey={setCheckKey} />
+          <Welcome
+            setCheckKey={setCheckKey}
+            modal={modal}
+            setModal={setModal}
+          />
         )}
       </div>
 

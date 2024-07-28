@@ -19,9 +19,16 @@
   min-height: 1.5rem;
   padding: 0.25rem;
   padding-left: 0.5rem;
-  border: 1px solid #000;
-  outline-style: auto;
+  border: 0.5px solid #000;
+  outline: 0.5px solid #000;
+  font-size: 16px;
+  border-radius: 3px;
 }
+.welcome input:focus {
+  outline: 0.5px solid #000;
+  border: 0.5px solid #000;
+}
+
 .welcome button {
   min-width: 10rem;
   min-height: 1.2rem;
@@ -30,31 +37,7 @@
   letter-spacing: 3px;
   outline: 0.75px solid #000;
 }
-.container-modal {
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffffd6;
-}
-.box-modal {
-  padding: 3rem;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  box-shadow: 2px 2px 4px 1px gray;
-}
-button.close-modal {
-  margin-top: 1rem;
-  width: 4rem;
-  height: 1.8rem;
-  letter-spacing: 2px;
-}
+
 button.hide-show {
   min-width: 2rem;
   font-size: 18px;
@@ -73,4 +56,12 @@ button.hide-show {
   width: fit-content;
   top: 7px;
   right: 7px;
+}
+.box-modal span.text-md {
+  text-transform: uppercase;
+}
+.box-modal a {
+  cursor: pointer;
+  color: #000;
+  font-weight: 600;
 }

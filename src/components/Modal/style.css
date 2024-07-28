@@ -1,0 +1,25 @@
+.container-modal {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffffd6;
+}
+.box-modal {
+  padding: 2rem 3rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 2px 2px 4px 1px gray;
+}
+button.close-modal {
+  margin-top: 1rem;
+  width: 4rem;
+  height: 1.8rem;
+  letter-spacing: 2px;
+}

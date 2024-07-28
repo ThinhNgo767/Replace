@@ -1,16 +1,26 @@
 import "./style.css";
+import Modal from "../Modal";
 
 import { useState, useEffect, useRef } from "react";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 
-const Welcome = ({ setCheckKey }) => {
+const Welcome = ({ setCheckKey, modal, setModal }) => {
   const [key, setKey] = useState("");
-  const [modal, setModal] = useState(false);
+
   const [type, setType] = useState(false);
 
   const inputRef = useRef(null);
 
   const secretKey = process.env.REACT_APP_SECRET_KEY;
+
+  const textModal = [
+    "Missing keys or wrong keys!",
+    `Please contact
+      <a href="https://t.me/ksc6789" target="_blank" rel="noreferrer">
+        admin
+      </a>
+    `,
+  ];
 
   useEffect(() => {
     let isKey = sessionStorage.getItem("secretKey") || "";
@@ -34,6 +44,7 @@ const Welcome = ({ setCheckKey }) => {
 
   const handleCloseModal = () => {
     setModal(false);
+    setType(false);
     inputRef.current.focus();
   };
 
@@ -78,23 +89,12 @@ const Welcome = ({ setCheckKey }) => {
           <span>Submit</span>
         </button>
       </section>
-      <div
-        className="container-modal"
-        style={modal ? { display: "flex" } : { display: "none" }}
-      >
-        <div className="box-modal">
-          <span>Missing keys or wrong keys!</span>
-          <span>Please contact admin.</span>
-          <button
-            type="button"
-            className="close-modal"
-            title="close modal"
-            onClick={handleCloseModal}
-          >
-            OKIE
-          </button>
-        </div>
-      </div>
+
+      <Modal
+        text={textModal}
+        modal={modal}
+        handleCloseModal={handleCloseModal}
+      />
     </>
   );
 };
