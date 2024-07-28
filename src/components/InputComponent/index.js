@@ -40,8 +40,8 @@ const InputComponent = ({ setDay }) => {
   const handleReplace = () => {
     const data = textInput
       .replace(/\bngàn\b|\bngan\b|\bnga\b|\bng\b/g, "n")
-      .replace(/đđ|đd|dđ/g, "dd")
-      .replace(/₫|đá|\bda\b/g, "dat")
+      .replace(/đđ|đd|dđ|₫₫/g, "dd")
+      .replace(/\b₫\b|đá|\bda\b/g, "dat")
       .replace(/(d)(\d+)/g, "dat$2n")
       .replace(/\.+|,+|;+|\+|-/g, " ")
       .replace(/(b|bl|dd|dau|duoi|dat)(\d+)/g, "$1$2")

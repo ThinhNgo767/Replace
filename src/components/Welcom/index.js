@@ -1,10 +1,12 @@
 import "./style.css";
 
 import { useState, useEffect, useRef } from "react";
+import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 
 const Welcome = ({ setCheckKey }) => {
   const [key, setKey] = useState("");
   const [modal, setModal] = useState(false);
+  const [type, setType] = useState(false);
 
   const inputRef = useRef(null);
 
@@ -35,16 +37,43 @@ const Welcome = ({ setCheckKey }) => {
     inputRef.current.focus();
   };
 
+  const handleShowHide = () => {
+    if (key === "") return;
+    setType(!type);
+  };
+
   return (
     <>
       <section className="welcome">
         <p>Vui lòng nhập secret key</p>
-        <input
-          ref={inputRef}
-          type="password"
-          value={key}
-          onChange={(e) => setKey(e.target.value)}
-        />
+
+        <div className="box-show-hide">
+          <input
+            ref={inputRef}
+            type={type ? "text" : "password"}
+            value={key}
+            onChange={(e) => setKey(e.target.value)}
+          />
+          <div className="show-hide-btn">
+            {type ? (
+              <button
+                className="hide-show"
+                onClick={handleShowHide}
+                title="show"
+              >
+                <BsEyeFill />
+              </button>
+            ) : (
+              <button
+                className="hide-show"
+                onClick={handleShowHide}
+                title="hide"
+              >
+                <BsEyeSlashFill />
+              </button>
+            )}
+          </div>
+        </div>
         <button type="button" onClick={handleCheckKey}>
           <span>Submit</span>
         </button>

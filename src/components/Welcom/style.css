@@ -14,6 +14,7 @@
   text-transform: uppercase;
 }
 .welcome input {
+  position: relative;
   min-width: 14rem;
   min-height: 1.5rem;
   padding: 0.25rem;
@@ -53,4 +54,23 @@ button.close-modal {
   width: 4rem;
   height: 1.8rem;
   letter-spacing: 2px;
+}
+button.hide-show {
+  min-width: 2rem;
+  font-size: 18px;
+  min-height: 1rem;
+  padding: 0;
+  border: none;
+  outline: none;
+  letter-spacing: 1px;
+  background-color: transparent;
+}
+.box-show-hide {
+  position: relative;
+}
+.show-hide-btn {
+  position: absolute;
+  width: fit-content;
+  top: 7px;
+  right: 7px;
 }
