@@ -4,6 +4,7 @@
   background-image: url("./img/white-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 button {
   border: 1px solid #000;
